@@ -24,3 +24,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [PostController::class,'index'])->name('dashboard')->middleware('auth');
 Route::get('/posts/create', [PostController::class,'create']);
 Route::post('/posts', [PostController::class,'store']);
+Route::get('/posts/like/{post}', [PostController::class,'like']);

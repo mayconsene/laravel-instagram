@@ -3,18 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Post extends Model
+class Like extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image', 'description', 'user_id'];
+    protected $fillable = ['post_id', 'user_id'];
 
     /**
-     * Get the user that owns the Post
+     * Get the user that owns the Like
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -24,12 +23,12 @@ class Post extends Model
     }
 
     /**
-     * Get all of the likes for the Post
+     * Get the post that owns the Like
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function likes(): HasMany
+    public function post(): BelongsTo
     {
-        return $this->hasMany(Like::class);
+        return $this->belongsTo(Post::class);
     }
 }

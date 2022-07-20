@@ -16,7 +16,7 @@
     @yield('content')
 
     <script src="{{ asset('plugins/sweetalert/sweetalert2.all.min.js') }}"></script>
-    <script src="{{ asset('plugins/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/jquery/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
